@@ -61,12 +61,12 @@ namespace Microsoft.Azure.Commands.MachineLearning.Utilities
                 definitionFileFullPath = Path.Combine(currentPath, definitionFilePath);
             }
 
-            if (!File.Exists(definitionFilePath))
+            if (!File.Exists(definitionFileFullPath))
             {
-                throw new FileNotFoundException(Resources.MissingDefinitionFile, definitionFilePath);
+                throw new FileNotFoundException(Resources.MissingDefinitionFile, definitionFileFullPath);
             }
 
-            return File.ReadAllText(definitionFilePath);
+            return File.ReadAllText(definitionFileFullPath);
         }
     }
 }
